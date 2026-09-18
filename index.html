@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>AuditISO · PRO — Sistema de Auditoría ISO · Fernando Silva</title>
+<title>AuditISO · PRO — EVALUACIÓN · Fernando Silva</title>
 <meta name="description" content="Sistema internacional de gestión de auditorías ISO. Desarrollado por Fernando Silva." />
 <style>
   html,body{margin:0;padding:0;background:#070b14}
@@ -133,6 +133,7 @@ const AUDITOR_KNOWLEDGE_PROFILE = {
   ],
   normasYEsquemasDominados: [
     "ISO 9001:2015 — Gestión de la Calidad",
+    "ISO 9001:2026 — Gestión de la Calidad (6ª edición, publicada el 16/09/2026, sustituye a la 2015)",
     "ISO 14001:2015 — Gestión Ambiental",
     "ISO 45001:2018 — Seguridad y Salud en el Trabajo",
     "ISO 27001:2022 — Seguridad de la Información",
@@ -288,6 +289,49 @@ const STANDARDS = {
       { id: "10.1", ref: "10.1", text: "¿Se determinan y seleccionan oportunidades de mejora?", ev: "Proyectos de mejora" },
       { id: "10.2", ref: "10.2", text: "¿Ante una NC se reacciona, se evalúa causa raíz y se verifica eficacia?", ev: "Acciones correctivas, verificación de eficacia" },
       { id: "10.3", ref: "10.3", text: "¿Se mejora continuamente la conveniencia, adecuación y eficacia del SGC?", ev: "Tendencias de KPI" }]},
+  ]},
+
+  iso9001_2026: { name: "ISO 9001:2026", full: "Gestión de la Calidad (6ª edición)", clauses: [
+    { id: "4", title: "Contexto de la organización", items: [
+      { id: "4.1", ref: "4.1", text: "¿Se determinan las cuestiones externas e internas pertinentes al propósito y dirección estratégica, con seguimiento y revisión? ¿Se ha determinado EXPLÍCITAMENTE si el cambio climático es una cuestión pertinente? (obligatorio, Amd 1:2024).", ev: "DAFO/PESTEL, actas de dirección, informe de contexto; evidencia documentada de la determinación sobre cambio climático (pertinente / no pertinente con justificación)" },
+      { id: "4.2", ref: "4.2", text: "¿Se identifican las partes interesadas pertinentes y sus requisitos, con seguimiento y revisión? ¿Se han considerado los requisitos de partes interesadas relacionados con el cambio climático cuando sean pertinentes? (NOTA Amd 1:2024).", ev: "Matriz de partes interesadas y requisitos, incluyendo requisitos climáticos aplicables" },
+      { id: "4.3", ref: "4.3", text: "¿El alcance del SGC está determinado, documentado y disponible, justificando exclusiones?", ev: "Documento de alcance y justificación" },
+      { id: "4.4", ref: "4.4", text: "¿Se establecen los procesos, entradas/salidas, secuencia, interacción, criterios, indicadores, responsables y riesgos asociados, conforme al enfoque basado en riesgos armonizado (Anexo SL 2021)?", ev: "Mapa de procesos, fichas de proceso, KPI, análisis de riesgo por proceso" }]},
+    { id: "5", title: "Liderazgo", items: [
+      { id: "5.1.1", ref: "5.1.1", text: "¿La alta dirección demuestra liderazgo y compromiso, incluyendo la promoción explícita y demostrable de una cultura de calidad, la integridad y el comportamiento ético en toda la organización?", ev: "Entrevistas a dirección, presupuestos, evidencia de comunicación de valores, ejemplo directivo" },
+      { id: "5.1.2", ref: "5.1.2", text: "¿Se asegura el enfoque al cliente: requisitos, riesgos/oportunidades y satisfacción?", ev: "Encuestas, análisis de quejas, indicadores" },
+      { id: "5.2.1", ref: "5.2.1 e)", text: "¿La política de calidad es apropiada al propósito y considera explícitamente el contexto de la organización y su dirección estratégica?", ev: "Política publicada, vínculo con plan estratégico, actas de dirección" },
+      { id: "5.2.2", ref: "5.2.2", text: "¿La política de calidad está comunicada, entendida y disponible como información documentada?", ev: "Evidencia de comunicación, canales internos" },
+      { id: "5.3", ref: "5.3", text: "¿Roles, responsabilidades y autoridades asignados y comunicados, incluida la rendición de cuentas sobre la cultura de calidad?", ev: "Organigrama, matriz RACI" }]},
+    { id: "6", title: "Planificación", items: [
+      { id: "6.1.1", ref: "6.1.1", text: "¿Al planificar el SGC se consideran las cuestiones del contexto y los requisitos de partes interesadas para determinar riesgos y oportunidades a abordar?", ev: "Metodología de planificación, registro de análisis" },
+      { id: "6.1.2", ref: "6.1.2", text: "¿Se determinan y abordan específicamente las acciones para tratar los riesgos identificados, integradas en los procesos del SGC?", ev: "Matriz de riesgos, planes de tratamiento de riesgos" },
+      { id: "6.1.3", ref: "6.1.3", text: "¿Se determinan y abordan específicamente las acciones para aprovechar las oportunidades identificadas, de forma diferenciada de los riesgos?", ev: "Registro de oportunidades, planes de acción de mejora" },
+      { id: "6.2", ref: "6.2", text: "¿Los objetivos de calidad son medibles, coherentes, se comunican y se actualizan conforme a los requisitos armonizados (Anexo SL 2021)?", ev: "Objetivos SMART, seguimiento de KPI, actas de actualización" },
+      { id: "6.3", ref: "6.3", text: "¿Los cambios en el SGC se planifican de manera controlada, considerando su propósito y consecuencias potenciales?", ev: "Registros de gestión del cambio" }]},
+    { id: "7", title: "Apoyo", items: [
+      { id: "7.1", ref: "7.1", text: "¿Se proveen los recursos: personas, infraestructura (incluye trabajo remoto/híbrido), ambiente para la operación de los procesos —factores sociales, psicológicos y físicos, que pueden verse influidos por la cultura de la calidad y el comportamiento ético (7.1.4)—, recursos de seguimiento y medición (con trazabilidad cuando aplique) y conocimientos de la organización?", ev: "Mantenimiento, calibraciones, gestión del conocimiento, política de trabajo remoto, evaluación del ambiente de trabajo (estrés, ergonomía, clima laboral, no discriminación)" },
+      { id: "7.2", ref: "7.2", text: "¿Se determina la competencia y se conserva evidencia (educación, formación, experiencia)?", ev: "Matriz de competencias, registros de formación" },
+      { id: "7.3", ref: "7.3", text: "¿El personal toma conciencia de la política, los objetivos, la cultura de calidad y su contribución a la eficacia del SGC?", ev: "Registros de sensibilización, entrevistas" },
+      { id: "7.4", ref: "7.4", text: "¿Se determina la comunicación interna y externa (qué, cuándo, a quién, cómo, quién)?", ev: "Plan de comunicación" },
+      { id: "7.5", ref: "7.5", text: "¿La información documentada se controla (identificación, aprobación, distribución, cambios, retención)?", ev: "Listado maestro, control de versiones" }]},
+    { id: "8", title: "Operación", items: [
+      { id: "8.1", ref: "8.1", text: "¿Se planifica, implementa y controla la operación con criterios de proceso y de aceptación, conforme a la redacción armonizada (Anexo SL 2021)?", ev: "Planes de calidad, criterios de aceptación" },
+      { id: "8.2", ref: "8.2", text: "¿Se comunica con el cliente y se determinan/revisan los requisitos antes de comprometerse? ¿La comunicación incluye información sobre acciones de contingencia ante disrupciones en la provisión de productos o servicios? (8.2.1 e), nuevo en 2026).", ev: "Revisión de contratos/pedidos, registros de comunicación con el cliente, plan de contingencia/continuidad" },
+      { id: "8.3", ref: "8.3", text: "¿El diseño y desarrollo se controla (entradas, controles, salidas, cambios)? (si aplica)", ev: "Registros de diseño, verificación y validación" },
+      { id: "8.4", ref: "8.4", text: "¿Se controlan los procesos, productos y servicios suministrados externamente y se evalúan/reevalúan los proveedores según su capacidad?", ev: "Criterios de evaluación, selección y reevaluación de proveedores, inspección de entrada" },
+      { id: "8.5", ref: "8.5", text: "¿Producción bajo condiciones controladas: identificación, trazabilidad, propiedad del cliente, preservación?", ev: "Órdenes de trabajo, trazabilidad" },
+      { id: "8.6", ref: "8.6", text: "¿Se verifica el cumplimiento antes de la liberación con trazabilidad a quien autoriza?", ev: "Registros de liberación, firmas" },
+      { id: "8.7", ref: "8.7", text: "¿Se controlan las salidas no conformes (identificación, tratamiento, concesión)?", ev: "Registro de producto no conforme" }]},
+    { id: "9", title: "Evaluación del desempeño", items: [
+      { id: "9.1", ref: "9.1", text: "¿Se determina qué/cómo/cuándo medir, incluida satisfacción del cliente, y se analizan los datos, incluyendo indicadores de cultura de calidad cuando corresponda?", ev: "Indicadores, análisis de datos, satisfacción" },
+      { id: "9.2", ref: "9.2", text: "¿El programa de auditoría interna es adecuado, con auditores objetivos e imparciales?", ev: "Programa y plan, informes, competencia de auditores" },
+      { id: "9.3", ref: "9.3", text: "¿La revisión por la dirección cubre todas las entradas (incluida la eficacia de las acciones para abordar riesgos —6.1.2— y oportunidades —6.1.3—, tratadas por separado) y genera salidas?", ev: "Acta de revisión por la dirección" }]},
+    { id: "10", title: "Mejora", items: [
+      { id: "10.1", ref: "10.1", text: "Mejora continua: ¿la organización mejora continuamente la idoneidad, adecuación y eficacia del SGC; considera los resultados del análisis/evaluación y de la revisión por la dirección para determinar oportunidades; e incluye acciones para (a) mejorar procesos/productos/servicios, (b) considerar necesidades y expectativas futuras y (c) corregir, prevenir o reducir efectos no deseados? [En la 6ª edición la mejora continua es 10.1; el antiguo 10.3 se eliminó].", ev: "Proyectos de mejora, tendencias de KPI, entradas/salidas de la revisión por la dirección" },
+      { id: "10.2", ref: "10.2", text: "No conformidad y acción correctiva: ¿ante una NC se reacciona y corrige, se hace frente a las consecuencias, se evalúa la causa raíz, se implementan acciones, se verifica su eficacia y, si procede, se actualizan los riesgos/oportunidades y se hacen cambios en el SGC?", ev: "Registros de NC, análisis de causa raíz, acciones correctivas y verificación de eficacia" }]},
+    { id: "AnexoA", title: "Anexo A (informativo) — Aclaración de términos", items: [
+      { id: "A.1", ref: "Anexo A", text: "Nuevo anexo informativo introducido en la edición 2026 para aclarar términos clave y facilitar la comprensión e interpretación homogénea de los requisitos. No es auditable como requisito, pero es útil como referencia al formular hallazgos.", ev: "Consultar Anexo A de la norma publicada" }]},
   ]},
 
   iso14001: { name: "ISO 14001:2015", full: "Gestión Ambiental", clauses: [
@@ -712,14 +756,14 @@ const STANDARDS = {
 
 /* Categorías, códigos y orden para el selector y las pestañas */
 const STD_CODE = {
-  iso9001: "9001", iso14001: "14001", iso45001: "45001", iso27001: "27001",
+  iso9001: "9001", iso9001_2026: "9001:26", iso14001: "14001", iso45001: "45001", iso27001: "27001",
   iso22000: "22000", haccp: "HACCP", fssc22000: "FSSC", brcgs: "BRCGS", ifsfood: "IFS", gmp: "GMP", gdp: "GDP",
   iso27701: "27701", iso20000: "20000-1", iso37001: "37001", iso37301: "37301", iso50001: "50001",
   iso55001: "55001", iso22301: "22301", iso13485: "13485", iso17025: "17025",
   iso19011: "19011", iso17021: "17021", iso31000: "31000",
 };
 const STD_CAT = {
-  iso9001: "qhse", iso14001: "qhse", iso45001: "qhse",
+  iso9001: "qhse", iso9001_2026: "qhse", iso14001: "qhse", iso45001: "qhse",
   iso22000: "food", haccp: "food", fssc22000: "food", brcgs: "food", ifsfood: "food", gmp: "food", gdp: "food",
   iso27001: "info", iso27701: "info", iso20000: "info",
   iso37001: "gov", iso37301: "gov", iso50001: "gov", iso55001: "gov", iso22301: "gov", iso13485: "gov", iso17025: "gov",
@@ -3486,7 +3530,277 @@ class ErrorBoundary extends React.Component {
   }
 }
 
-ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(ErrorBoundary, null, React.createElement(App)));
+/* ==== INICIO: núcleo de licencia (inyectado) ==== */
+/* ============================================================================
+ * AuditISO · PRO — Núcleo de licencias (compartido)
+ * SHA-256 + HMAC-SHA256 en JS puro (funciona offline, sin dependencias).
+ * ========================================================================== */
+var LIC = (function () {
+  // --- SHA-256 (implementación estándar, sin dependencias) -----------------
+  function sha256(ascii) {
+    function rightRotate(value, amount) { return (value >>> amount) | (value << (32 - amount)); }
+    var mathPow = Math.pow;
+    var maxWord = mathPow(2, 32);
+    var result = '';
+    var words = [];
+    var asciiBitLength = ascii.length * 8;
+    var hash = sha256.h = sha256.h || [];
+    var k = sha256.k = sha256.k || [];
+    var primeCounter = k.length;
+    var isComposite = {};
+    for (var candidate = 2; primeCounter < 64; candidate++) {
+      if (!isComposite[candidate]) {
+        for (var i = 0; i < 313; i += candidate) { isComposite[i] = candidate; }
+        hash[primeCounter] = (mathPow(candidate, 0.5) * maxWord) | 0;
+        k[primeCounter++] = (mathPow(candidate, 1 / 3) * maxWord) | 0;
+      }
+    }
+    ascii += '\x80';
+    while (ascii.length % 64 - 56) ascii += '\x00';
+    for (i = 0; i < ascii.length; i++) {
+      var j = ascii.charCodeAt(i);
+      if (j >> 8) return '';
+      words[i >> 2] |= j << ((3 - i) % 4) * 8;
+    }
+    words[words.length] = ((asciiBitLength / maxWord) | 0);
+    words[words.length] = (asciiBitLength);
+    for (j = 0; j < words.length;) {
+      var w = words.slice(j, j += 16);
+      var oldHash = hash;
+      hash = hash.slice(0, 8);
+      for (i = 0; i < 64; i++) {
+        var w15 = w[i - 15], w2 = w[i - 2];
+        var a = hash[0], e = hash[4];
+        var temp1 = hash[7]
+          + (rightRotate(e, 6) ^ rightRotate(e, 11) ^ rightRotate(e, 25))
+          + ((e & hash[5]) ^ ((~e) & hash[6]))
+          + k[i]
+          + (w[i] = (i < 16) ? w[i] : (
+            w[i - 16]
+            + (rightRotate(w15, 7) ^ rightRotate(w15, 18) ^ (w15 >>> 3))
+            + w[i - 7]
+            + (rightRotate(w2, 17) ^ rightRotate(w2, 19) ^ (w2 >>> 10))
+          ) | 0);
+        var temp2 = (rightRotate(a, 2) ^ rightRotate(a, 13) ^ rightRotate(a, 22))
+          + ((a & hash[1]) ^ (a & hash[2]) ^ (hash[1] & hash[2]));
+        hash = [(temp1 + temp2) | 0].concat(hash);
+        hash[4] = (hash[4] + temp1) | 0;
+      }
+      for (i = 0; i < 8; i++) { hash[i] = (hash[i] + oldHash[i]) | 0; }
+    }
+    for (i = 0; i < 8; i++) {
+      for (j = 3; j + 1; j--) {
+        var b = (hash[i] >> (j * 8)) & 255;
+        result += ((b < 16) ? 0 : '') + b.toString(16);
+      }
+    }
+    return result;
+  }
+
+  function utf8(str) {
+    return unescape(encodeURIComponent(str));
+  }
+
+  // --- HMAC-SHA256 ---------------------------------------------------------
+  function hmac(keyStr, msgStr) {
+    var key = utf8(keyStr), msg = utf8(msgStr);
+    var blockSize = 64;
+    if (key.length > blockSize) {
+      key = hexToStr(sha256(key));
+    }
+    while (key.length < blockSize) key += '\x00';
+    var oKey = '', iKey = '';
+    for (var i = 0; i < blockSize; i++) {
+      var c = key.charCodeAt(i);
+      oKey += String.fromCharCode(c ^ 0x5c);
+      iKey += String.fromCharCode(c ^ 0x36);
+    }
+    return sha256(oKey + hexToStr(sha256(iKey + msg)));
+  }
+
+  function hexToStr(hex) {
+    var out = '';
+    for (var i = 0; i < hex.length; i += 2) out += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
+    return out;
+  }
+
+  // --- base64url -----------------------------------------------------------
+  function b64uEncode(str) {
+    return btoa(utf8(str)).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  }
+  function b64uDecode(b64) {
+    b64 = b64.replace(/-/g, '+').replace(/_/g, '/');
+    while (b64.length % 4) b64 += '=';
+    return decodeURIComponent(escape(atob(b64)));
+  }
+
+  // --- Token: payload.firma ------------------------------------------------
+  // payload = { n: nombre, exp: "YYYY-MM-DD", id: idCorto }
+  function makeToken(secret, payloadObj) {
+    var payloadB64 = b64uEncode(JSON.stringify(payloadObj));
+    var sig = hmac(secret, payloadB64).substr(0, 32); // 128 bits
+    return payloadB64 + '.' + sig;
+  }
+
+  function verifyToken(secret, token) {
+    try {
+      token = String(token).replace(/\s+/g, '');
+      var parts = token.split('.');
+      if (parts.length !== 2) return { ok: false, reason: 'formato' };
+      var expected = hmac(secret, parts[0]).substr(0, 32);
+      if (expected !== parts[1]) return { ok: false, reason: 'firma' };
+      var payload = JSON.parse(b64uDecode(parts[0]));
+      return { ok: true, payload: payload };
+    } catch (e) {
+      return { ok: false, reason: 'error' };
+    }
+  }
+
+  return {
+    sha256: sha256,
+    hmac: hmac,
+    makeToken: makeToken,
+    verifyToken: verifyToken
+  };
+})();
+
+window.__AUDITISO_RENDER__ = function(){
+  ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(ErrorBoundary, null, React.createElement(App)));
+};
+/* ============================================================================
+ * AuditISO · PRO — Puerta de licencia (VERSIÓN DE EVALUACIÓN)
+ * Requiere código de acceso, aplica caducidad y anti-retroceso de reloj,
+ * y muestra marca de agua con el nombre del evaluador.
+ * ========================================================================== */
+(function () {
+  var SECRET = "92c27091c6d8a1fe96166e8becab96ee3464caf2b4eced38";
+  var LS = {
+    token: 'auditiso_lic_token',
+    hwm: 'auditiso_lic_hwm'   // high-water-mark: fecha máxima vista (anti-retroceso)
+  };
+
+  function today() { return new Date(); }
+  function ymd(d) { return d.toISOString().slice(0, 10); }
+
+  function lockScreen(title, msg, allowRetry) {
+    var root = document.getElementById('root');
+    root.innerHTML = '';
+    var wrap = document.createElement('div');
+    wrap.style.cssText = 'min-height:100vh;display:flex;align-items:center;justify-content:center;background:#070b14;color:#e6ecf5;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;padding:24px;box-sizing:border-box';
+    var card = document.createElement('div');
+    card.style.cssText = 'max-width:440px;width:100%;background:rgba(20,28,44,.72);border:1px solid rgba(120,140,180,.18);border-radius:16px;padding:30px 28px;box-shadow:0 20px 60px rgba(0,0,0,.45);text-align:center';
+    card.innerHTML =
+      '<div style="font-size:12px;letter-spacing:.14em;color:#2dd4bf;font-weight:700;margin-bottom:14px">AUDITISO · PRO — EVALUACIÓN</div>' +
+      '<div style="font-size:19px;font-weight:700;margin-bottom:10px">' + title + '</div>' +
+      '<div style="font-size:13.5px;line-height:1.55;color:#93a1b8;margin-bottom:' + (allowRetry ? '18px' : '4px') + '">' + msg + '</div>';
+    if (allowRetry) {
+      var input = document.createElement('textarea');
+      input.placeholder = 'Pega aquí tu código de acceso…';
+      input.rows = 3;
+      input.style.cssText = 'width:100%;box-sizing:border-box;resize:vertical;background:#0b1220;border:1px solid rgba(120,140,180,.25);border-radius:10px;color:#e6ecf5;padding:11px 12px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;margin-bottom:12px';
+      var btn = document.createElement('button');
+      btn.textContent = 'Activar evaluación';
+      btn.style.cssText = 'width:100%;padding:12px;border-radius:10px;border:1px solid rgba(45,212,191,.4);background:rgba(45,212,191,.14);color:#2dd4bf;font-weight:700;font-size:14px;cursor:pointer';
+      var err = document.createElement('div');
+      err.style.cssText = 'color:#f87171;font-size:12.5px;min-height:18px;margin-top:10px';
+      btn.onclick = function () {
+        var res = tryActivate(input.value);
+        if (!res.ok) { err.textContent = res.msg; }
+      };
+      card.appendChild(input);
+      card.appendChild(btn);
+      card.appendChild(err);
+    }
+    wrap.appendChild(card);
+    root.appendChild(wrap);
+  }
+
+  // Valida un código y, si es correcto y vigente, guarda y arranca la app.
+  function tryActivate(rawToken) {
+    var v = LIC.verifyToken(SECRET, rawToken);
+    if (!v.ok) return { ok: false, msg: 'Código no válido. Verifica que lo copiaste completo.' };
+    var check = checkPayload(v.payload);
+    if (!check.ok) return { ok: false, msg: check.msg };
+    localStorage.setItem(LS.token, String(rawToken).replace(/\s+/g, ''));
+    localStorage.setItem(LS.hwm, ymd(today()));
+    boot(v.payload);
+    return { ok: true };
+  }
+
+  // Comprueba vigencia + anti-retroceso de reloj.
+  function checkPayload(payload) {
+    var now = today();
+    var exp = new Date(payload.exp + 'T23:59:59');
+    // anti-retroceso: si el reloj está antes de la fecha máxima ya vista → sospechoso
+    var hwm = localStorage.getItem(LS.hwm);
+    if (hwm && ymd(now) < hwm) {
+      return { ok: false, expired: true, msg: 'Se detectó una inconsistencia en la fecha del sistema. Ajusta la fecha/hora de tu equipo e inténtalo de nuevo.' };
+    }
+    if (now > exp) {
+      return { ok: false, expired: true, msg: 'El periodo de evaluación finalizó el ' + payload.exp + '.' };
+    }
+    return { ok: true };
+  }
+
+  // Arranca la app real y pinta la marca de agua.
+  function boot(payload) {
+    // actualiza high-water-mark
+    var hwm = localStorage.getItem(LS.hwm);
+    var t = ymd(today());
+    if (!hwm || t > hwm) localStorage.setItem(LS.hwm, t);
+
+    window.__AUDITISO_RENDER__();       // render de la app original
+    addWatermark(payload);
+  }
+
+  function addWatermark(payload) {
+    var name = (payload && payload.n) ? payload.n : 'EVALUACIÓN';
+    var exp = (payload && payload.exp) ? payload.exp : '';
+    // banda superior
+    var bar = document.createElement('div');
+    bar.className = 'no-print';
+    bar.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:99999;background:linear-gradient(90deg,#f59e0b,#f97316);color:#1a1200;font:600 12px system-ui,sans-serif;text-align:center;padding:5px 10px;letter-spacing:.02em';
+    bar.textContent = 'COPIA DE EVALUACIÓN · Licenciada a: ' + name + ' · Válida hasta ' + exp + ' · No distribuir';
+    document.body.appendChild(bar);
+    // marca de agua diagonal (pantalla + impresión)
+    var wm = document.createElement('div');
+    wm.setAttribute('id', 'auditiso-wm');
+    var label = ('EVALUACIÓN · ' + name + ' · NO DISTRIBUIR   ');
+    wm.style.cssText = 'position:fixed;inset:0;z-index:99998;pointer-events:none;opacity:.06;overflow:hidden;transform:rotate(-30deg) scale(1.6);color:#e6ecf5;font:700 26px system-ui,sans-serif;white-space:pre-wrap;line-height:120px;word-spacing:14px';
+    var big = '';
+    for (var i = 0; i < 60; i++) big += label;
+    wm.textContent = big;
+    document.body.appendChild(wm);
+    // estilos de impresión para que la marca salga en los informes
+    var st = document.createElement('style');
+    st.textContent = '@media print{#auditiso-wm{position:fixed!important;opacity:.10!important;color:#000!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;display:block!important}}';
+    document.head.appendChild(st);
+  }
+
+  // --- Arranque -----------------------------------------------------------
+  function start() {
+    var saved = localStorage.getItem(LS.token);
+    if (saved) {
+      var v = LIC.verifyToken(SECRET, saved);
+      if (v.ok) {
+        var check = checkPayload(v.payload);
+        if (check.ok) { boot(v.payload); return; }
+        // vencido o reloj manipulado
+        lockScreen('Evaluación finalizada', check.msg + '<br><br>Para continuar usando el sistema, contacta con el proveedor para obtener una licencia completa.', false);
+        return;
+      }
+      // token corrupto → pedir de nuevo
+      localStorage.removeItem(LS.token);
+    }
+    lockScreen('Activa tu evaluación', 'Introduce el código de acceso que te entregó el proveedor para comenzar la evaluación de AuditISO · PRO.', true);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start);
+  } else { start(); }
+})();
+
+/* ==== FIN: núcleo de licencia ==== */
 
 </script>
 </body>
